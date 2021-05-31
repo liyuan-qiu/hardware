@@ -1,0 +1,10 @@
+dataall=xlsread('VzVy.xlsx');
+time=dataall(:,1);
+Vz=dataall(:,2);
+Vy=dataall(:,3);
+subplot(2,1,1)
+scatter(time,Vz)
+(max(Vz)-min(Vz))*1000/10
+subplot(2,1,2)
+scatter(time,Vy)
+(max(Vy)-min(Vy))*1000/10
