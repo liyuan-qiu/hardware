@@ -17,7 +17,9 @@ end
 
 % Connect to instrument object, obj1.
 fopen(obj_Vx);
-set(obj_Vx, 'Timeout', 1);
+set(obj_Vx, 'Timeout', 2);
+set(obj_Vx,'Terminator','CR/LF')
+'connect obj_Vx'
 %===============================
 % Find a serial port object.
 obj_Vz = instrfind('Type', 'serial', 'Port', 'COM10', 'Tag', '');
@@ -33,7 +35,11 @@ end
 
 % Connect to instrument object, obj1.
 fopen(obj_Vz);
-set(obj_Vz, 'Timeout', 1);
+set(obj_Vz, 'Timeout', 2);
+set(obj_Vz,'Terminator','CR/LF')
+
+'connect obj_Vy'
+% =======================================
 % Find a serial port object.
 UnoDAC = instrfind('Type', 'serial', 'Port', 'COM14', 'Tag', '');
 
@@ -47,4 +53,7 @@ else
 end
 % Connect to instrument object, obj1.
 fopen(UnoDAC);
-set(UnoDAC, 'Timeout', 1);
+set(UnoDAC, 'Timeout', 2);
+set(UnoDAC,'Terminator','CR/LF')
+
+'connect UnoDAC'
